@@ -1,4 +1,4 @@
-package dantycraft.votes;
+package com.bukkit.vote;
 
 import java.util.Arrays;
 
@@ -22,9 +22,9 @@ public class Main extends JavaPlugin implements Listener {
 	//Variables For Configuration:
 	public String TopText = getConfig().getString("TopText");
 	
-	public String itemName1 = getConfig().getString("item1");
-	public String itemName2 = getConfig().getString("item2");
-	public String itemName3 = getConfig().getString("item3");
+	public String itemName1 = getConfig().getString("itemName1");
+	public String itemName2 = getConfig().getString("itemName2");
+	public String itemName3 = getConfig().getString("itemName3");
 	
 	public String itemLore1 = getConfig().getString("item1Lore");
 	public String itemLore2 = getConfig().getString("item2Lore");
@@ -33,6 +33,11 @@ public class Main extends JavaPlugin implements Listener {
 	public String itemLink1 = getConfig().getString("item1Link");
 	public String itemLink2 = getConfig().getString("item2Link");
 	public String itemLink3 = getConfig().getString("item3Link");
+	public String UserCommand = getConfig().getString("command");
+	
+	Material itemType1 = Material.getMaterial(getConfig().getString("itemType1"));
+	Material itemType2 = Material.getMaterial(getConfig().getString("itemType2"));
+	Material itemType3 = Material.getMaterial(getConfig().getString("itemType3"));
 	
 
 	@Override
@@ -70,15 +75,15 @@ public class Main extends JavaPlugin implements Listener {
 		// 3/6
 		vote.setItem(
 				1,
-				createItem(Material.FIREWORK, 1, (short) 0,
+				createItem(itemType1, 1, (short) 0,
 						itemName1, itemLore1));
 		vote.setItem(
 				4,
-				createItem(Material.FIREWORK, 1, (short) 0, itemName2,
+				createItem(itemType2, 1, (short) 0, itemName2,
 						itemLore2));
 		vote.setItem(
 				7,
-				createItem(Material.FIREWORK, 1, (short) 0, itemName3,
+				createItem(itemType3, 1, (short) 0, itemName3,
 						itemLore3));
 	}
 
